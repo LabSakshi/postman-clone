@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Form from './Form'
 import SelectTab from './SelectTab'
+import Response from './Response'
 import { Box, margin } from '@mui/system'
 import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles({
@@ -19,6 +20,7 @@ const Home = () => {
             <Box className={classes.component}>
                 <Form />
                 <SelectTab />
+                <Response/>
             </Box>
         </div>
     )

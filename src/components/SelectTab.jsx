@@ -2,6 +2,9 @@ import { Box, Tab, tabClasses, Tabs } from "@mui/material";
 import { useState } from "react";
 import { makeStyles } from "@mui/styles";
 
+import CreateTable from './CreateTable';
+import CreateJsontext from "./CreateJsonText";
+
 const useStyles = makeStyles({
     component: {
         marginTop: 20
@@ -30,18 +33,18 @@ const SelecTab = () => {
                 }}
                 textColor="none">
 
-               {tabComponent.map((tab)=>{
-                   return (
-                       <Tab label={tab} className={classes.tab}/>
-                   )
-               })}
+                {tabComponent.map((tab) => {
+                    return (
+                        <Tab label={tab} className={classes.tab} />
+                    )
+                })}
             </Tabs>
             <Box role="tabp
             anel"
                 hidden={value !== 0}
                 id={`simple-tabpanel-${0}`}
             >
-                Params
+                <CreateTable text='Query Params'/>
 
             </Box>
             <Box role="tabpanel"
@@ -49,7 +52,7 @@ const SelecTab = () => {
                 id={`simple-tabpanel-${1}`}
                 aria-labelledby={`simple-tab-${1}`}
             >
-                Headers
+                <CreateTable text='Headers'/>
 
             </Box>
             <Box role="tabpanel"
@@ -57,8 +60,8 @@ const SelecTab = () => {
                 id={`simple-tabpanel-${2}`}
                 aria-labelledby={`simple-tab-${2}`}
             >
-                Body
-
+              
+                    <CreateJsontext/>
             </Box>
 
         </Box>
